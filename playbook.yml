@@ -6,4 +6,5 @@
       apt: update_cache=yes
 
   roles:
-    - { role: "azavea.terraform" }
+    # Terraform
+    - { role: "ansible-terraform" }

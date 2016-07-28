@@ -1,4 +1,14 @@
 ---
+- name: Check Terraform Version
+  shell: terraform --version | grep {{ terraform_version }}
+  register: current_terraform_version
+
+  # Don't register ansible change if the proper version terraform is
+  # currently installed. Maintains idempotence for testing.
+
+  changed_when: current_terraform_version.rc != 0
+  ignore_errors: True
+
 - name: Download Terraform
   get_url: url="https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
            dest="/usr/local/src/terraform_{{ terraform_version }}_linux_amd64.zip"
@@ -7,3 +17,4 @@
   unarchive: src=/usr/local/src/terraform_{{ terraform_version }}_linux_amd64.zip
              dest=/usr/local/bin
              copy=no
+  when: current_terraform_version.rc != 0
