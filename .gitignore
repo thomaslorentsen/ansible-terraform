@@ -1,2 +1,8 @@
 .vagrant
-examples/roles/azavea.unzip
+
+# Molecule
+*.log
+.cache
+__pycache__
+*.pyc
+.molecule
