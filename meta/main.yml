@@ -13,4 +13,5 @@ galaxy_info:
   - cloud
   - system
 dependencies:
-  - { role: "azavea.unzip" }
+  - src: azavea.unzip
+    version: 0.1.2
