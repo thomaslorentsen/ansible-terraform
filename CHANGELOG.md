@@ -1,4 +1,9 @@
+## 0.3.0
+
+- Update dependency rolespec
+
 ## 0.2.0
+
 - Replace Vagrant example project with Molecule
 - Add Molecule testing support for Ubuntu 16.04
 
