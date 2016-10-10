@@ -4,11 +4,11 @@
 
   pre_tasks:
 
-    # Check Ubuntu release version to determine if we need to install python 2,
+    # Check Ubuntu release version to determine if we need to install Python 2,
     # an ansible dependency that isn't included by default in Ubuntu 16.04 and
     # up.
 
-    - name: Check ubuntu release
+    - name: Check Ubuntu release
       raw: cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d "=" -f2
       register: ubuntu_release
 
@@ -19,7 +19,7 @@
       raw: apt-get update
       become: True
 
-    - name: Install python
+    - name: Install Python
       raw: apt-get install -yq python
       become: True
       when: "{{ ubuntu_release.stdout| version_compare('16.04', '>=') }}"
