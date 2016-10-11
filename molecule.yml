@@ -4,6 +4,15 @@ ansible:
   requirements_file: requirements.yml
   sudo: True
 
+molecule:
+  test:
+    sequence:
+      - destroy
+      - syntax
+      - create
+      - converge
+      - idempotence
+
 vagrant:
   platforms:
     - name: trusty64
