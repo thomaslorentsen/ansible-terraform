@@ -1,6 +1,10 @@
+## 0.3.1
+
+- Fix Terraform version check process before installation.
+
 ## 0.3.0
 
-- Update dependency rolespec
+- Update dependency role spec.
 
 ## 0.2.0
 
