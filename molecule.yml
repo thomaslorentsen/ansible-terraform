@@ -1,8 +1,11 @@
 ---
 ansible:
   config_file: ansible.cfg
+  become: True
+
+dependency:
+  name: galaxy
   requirements_file: requirements.yml
-  sudo: True
 
 molecule:
   test:
@@ -11,7 +14,6 @@ molecule:
       - syntax
       - create
       - converge
-      - idempotence
 
 vagrant:
   platforms:
