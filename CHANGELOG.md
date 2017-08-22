@@ -1,3 +1,8 @@
+## 0.4.0
+
+- Validate download against published checksum.
+- Update default Terraform version to 0.9.11.
+
 ## 0.3.1
 
 - Fix Terraform version check process before installation.
